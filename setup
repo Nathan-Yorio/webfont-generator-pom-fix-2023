@@ -60,6 +60,15 @@ fetch_sfntly() {
   fi
 }
 
+force_new_compiler() {
+  log 'Forcing new compiler version..'
+  (
+    cd "$SFNTLY_DIR"/java &&
+    sed -i -e "s/source>.*/source>1.7<\/maven.compiler.source>/g" pom.xml &&
+    sed -i -e "s/target>.*/target>1.7<\/maven.compiler.target>/g" pom.xml
+  )
+}
+
 build_sfntly() {
   log 'Building sfntly...'
   (
@@ -99,6 +108,7 @@ main() {
   require_command 'fontforge' 'FontForge' &&
   mkdir -p "$VENDOR_DIR" &&
   fetch_sfntly &&
+  force_new_compiler &&
   build_sfntly &&
   fetch_woff2 &&
   build_woff2 &&
