@@ -1,3 +1,5 @@
+# Fork I made to add a small functional fix to the setup script so that the sfntly tool will still compile
+
 Web Font Generator
 ------------------
 
