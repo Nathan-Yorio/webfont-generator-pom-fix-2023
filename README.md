@@ -1,4 +1,4 @@
-### 2023-2-14 Fork I made to add a small functional fix to the setup script so that the sfntly tool will still compile
+### 2023-2-14 Fork I made to add a small functional fix to the setup script so that the sfntly tool will still compile, will probably break again whenever the next version is forced
 
 Web Font Generator
 ------------------
